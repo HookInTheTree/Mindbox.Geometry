@@ -8,7 +8,7 @@ namespace Mindbox.Geometry.Shapes
         private readonly double a;
         private readonly double b;
         private readonly double c;
-        private readonly double s;
+        private readonly double area;
         private readonly bool isRight;
 
         public Triangle(double _a, double _b, double _c)
@@ -21,8 +21,7 @@ namespace Mindbox.Geometry.Shapes
             c = _c;
 
             var p = (a + b + c) / 2;
-            var S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
-            s = S;
+            area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
 
             isRight = Math.Pow(c, 2) == Math.Pow(a,2) + Math.Pow(b,2);
         }
@@ -30,7 +29,7 @@ namespace Mindbox.Geometry.Shapes
         public double A => a;
         public double B => b;
         public double C => c;
-        public override double S => s;
+        public override double Area => area;
         public bool IsRightTriangle => isRight;
 
         private bool IsValid(double a, double b, double c)

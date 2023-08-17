@@ -1,9 +1,5 @@
 ﻿using Mindbox.Geometry.Shapes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Mindbox.Geometry.Tests
 {
@@ -14,12 +10,14 @@ namespace Mindbox.Geometry.Tests
         {
         }
 
-        [TestCase(1, 3.14)]
-        [TestCase(2, 12.56)]
-        [TestCase(5, 50.26)]
-        public void Circle_S_IsRight(double R, double S)
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(5)]
+        public void Circle_S_IsRight(double R)
         {
-            Assert.AreEqual(S, new Circle(R).S);
+            var expectedArea = Math.PI * Math.Pow(R, 2);
+            var actualArea = new Circle(R).Area;
+            Assert.That(actualArea, Is.EqualTo(expectedArea));
         }
     }
 }

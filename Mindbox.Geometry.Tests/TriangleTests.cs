@@ -32,7 +32,7 @@ namespace Mindbox.Geometry.Tests
         public void Triangle_S_IsRight(double a, double b, double c, double s)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.That(triangle.S, Is.EqualTo(s));
+            Assert.That(triangle.Area, Is.EqualTo(s));
         }
 
         [TestCase(3,4,5)]

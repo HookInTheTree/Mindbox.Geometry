@@ -2,6 +2,6 @@
 {
     public abstract class Shape
     {
-        public abstract double S { get; } 
+        public abstract double Area { get; } 
     }
 }

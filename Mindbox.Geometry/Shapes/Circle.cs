@@ -6,13 +6,14 @@ namespace Mindbox.Geometry.Shapes
     public sealed class Circle : Shape
     {
         private readonly double radius;
-        private readonly double s;
+        private readonly double area;
         public Circle(double _radius)
         {
             radius = _radius;
 
-            s = Math.Round(Math.PI * Math.Pow(radius, 2), 2);
+            area = Math.PI * Math.Pow(radius, 2);
         }
-        public override double S => s;
+        public override double Area => area;
+        public double Radius => radius;
     }
 }
