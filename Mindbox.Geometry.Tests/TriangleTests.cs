@@ -1,14 +1,8 @@
-using Mindbox.Geometry.Shapes;
 
 namespace Mindbox.Geometry.Tests
 {
     public class TriangleTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [TestCase(1,2,3)]
         [TestCase(5,2,3)]
         [TestCase(6,8,1)]
@@ -32,7 +26,7 @@ namespace Mindbox.Geometry.Tests
         public void Triangle_S_IsRight(double a, double b, double c, double s)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.That(triangle.Area, Is.EqualTo(s));
+            Assert.That(triangle.CalculateArea(), Is.EqualTo(s));
         }
 
         [TestCase(3,4,5)]
@@ -42,7 +36,7 @@ namespace Mindbox.Geometry.Tests
         public void Triangle_IsRight(double a, double b, double c)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.That(triangle.IsRightTriangle, Is.EqualTo(true));
+            Assert.That(triangle.IsTriangleRight(), Is.EqualTo(true));
         }
 
 
@@ -54,7 +48,7 @@ namespace Mindbox.Geometry.Tests
         public void Triangle_IsNotRight(double a, double b, double c)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.That(triangle.IsRightTriangle, Is.EqualTo(false));
+            Assert.That(triangle.IsTriangleRight, Is.EqualTo(false));
         }
     }
 }
